@@ -1,0 +1,9 @@
+<decoder name="argus-eye">
+  <prematch>SEC-04</prematch>
+</decoder>
+
+<decoder name="argus-eye-fields">
+  <parent>argus-eye</parent>
+  <regex>(SEC-04)</regex>
+  <order>argus_code</order>
+</decoder>

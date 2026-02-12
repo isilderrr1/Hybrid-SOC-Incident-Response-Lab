@@ -1,0 +1,6 @@
+<group name="argus,">
+  <rule id="100100" level="12">
+    <decoded_as>argus-eye</decoded_as>
+    <description>ARGUS CRITICAL ALERT: Rilevata Minaccia!</description>
+  </rule>
+</group>
