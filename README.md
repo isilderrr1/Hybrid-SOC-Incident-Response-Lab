@@ -37,7 +37,7 @@ The setup bridges a standard home gateway with a dedicated laboratory subnet:
 ### A. Data Collection (Log Ingestion)
 To integrate the custom tool with the SIEM, a **cronjob** was implemented to bridge Argus-Eye logs into the system's `syslog`:
 
-```bash
+
 # Log injection every minute
 * * * * * /home/antonio/.local/bin/argus logs --last 1 | logger
 B. Analysis and Decoding
@@ -50,17 +50,24 @@ Extraction: Extracts specific event codes like SEC-04 (Unauthorized Service Dete
 C. Detection Rules & Incident Response
 A Level 12 (Critical) rule (ID: 100100) was configured to trigger immediate alerts upon unauthorized process detection.
 
-📊 4. Results & Gallery
+## 📊 4. Results & Gallery
+
 The lab successfully detects threats in real-time, providing deep visibility through the Wazuh Dashboard.
 
-SOC Dashboard Overview
+### SOC Dashboard Overview
 The dashboard clearly displays the critical alert (Level 12), highlighting the immediate need for analyst intervention.
 
-Event Detailed Analysis
+![Wazuh Dashboard](./media/level12.png)
+
+### Event Detailed Analysis
 Wazuh's decoder correctly identifies the SEC-04 code from the raw logs injected via syslog.
 
-Physical Lab Setup
-(Includi qui la tua foto del modem/switch quando la caricherai)
+![Event Detail](./media/event.png)
+
+### Physical Lab Setup
+Below is the physical heart of the lab: the interconnection between the TIM Hub, the TP-Link Switch, and the MacBook Pro server.
+
+![Physical Hardware Setup](./media/lab.jpeg)
 
 🔧 Troubleshooting Note
 During implementation, several challenges were addressed:
